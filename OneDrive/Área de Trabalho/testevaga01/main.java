@@ -16,7 +16,7 @@ public class main {
         inicializarFuncionarios();
 
         while (true) {
-            System.out.print("Digite um comando(Aumento, Funcao, Aniversariantes, MaiorIdade, Nome, Total, excluir, Sair): ");
+            System.out.print("Digite um comando(Aumento, tabela, Funcao, Aniversariantes, MaiorIdade, Nome, Total, excluir, Sair): ");
             String comando = scanner.nextLine();
             switch (comando.toLowerCase()) {
                 case "aumento":
@@ -69,12 +69,14 @@ public class main {
                         System.out.println("Funcionário não encontrado.");
                     }
                     break;
+                case "tabela":
+                    funcionarios.forEach(System.out::println);
+                    break;
                 case "sair":
                     scanner.close();
                     return;
                 default:
                     System.out.println("Comando não reconhecido.");
-            }
         }
     }
 
